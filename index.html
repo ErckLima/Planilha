@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planilhas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="Carregadata()">
+    <div class="imagem">
+        <img src="https://play-lh.googleusercontent.com/keE2gN0Hqh8-Tsf_RYZ_-yS2uo6ToqYVyRBv_UZaLXsgeeHBd2YPcEUWEF4DEtfGyb1h" alt="Imagem_planilha">
+    </div>
+    <form id="formulario">
+
+        <!-- Div do descrição  -->
+
+        <div>
+            <label for="Descrição">Descrição</label>
+            <input type="text" class="Input" name="data[Descrição]" id="Descrição" style='text-transform:uppercase'>
+        </div>
+
+        <!-- Div da forma  -->
+
+        <div class="ratio">
+            <select name="Tipo_op" id="opc">
+                <option value="" disabled selected hidden>Selecione uma opção</option>
+                <option value="deb" name="data[forma]" id="forma" class="Input">DEBITO</option>
+                <option value="cred" name="data[forma]" id="forma" class="Input">CREDITO</option>
+
+            </select>
+        </div>
+
+        <!-- Div do valor --- para numerico no celular pattern="\d*" -->
+        
+        <div>
+            <label for="tipo">Valor: </label>
+            <input type="number" inputmode="numeric" class="Input" step="0.01" id="numnegativo" placeholder="R$" name="data[valor]">
+        </div>
+
+        <!-- Div da parcela -->
+
+        <div>
+            <label for="parcelas">Parcelas</label>
+            <input type="number"  pattern="\d*" class="Input" id="Parcela_mes" name="data[Parcela_mes]" min="0" max="12" class="Parcela">
+            <input type="number"  pattern="\d*" class="Input" id="Parcela_total" name="data[Parcela_total]" min="0" max="12" class="Parcela">
+        </div>
+
+        <!-- Div da data -->
+
+        <div>
+            <label for="Datas">Data da operação: </label>
+            <input type="date" name="data[Data]" id="Data" >
+        </div>
+
+    </form>
+        <button type="submit" name="submit" class="btn" onclick="safe()"> Salvar</button>
+
+    
+    <div class="tel">
+        <p>------------------------------------------------------------------</p>
+    </div>
+    <div class="gets">
+        <button onclick="Consultar()" class="btn">Consultar Saldo</button>
+        <button onclick="Colsultar_Ultimo_Lancamento()" class="btn">Ultimo Lançamento</button>
+        <button onclick="Ver_todos()" class="btn">Consultar todos</button>
+    </div>
+    
+    <div>
+        <button onclick="Limpar()" class="btn btn_clean"> Limpar</button>
+    </div>
+
+    <div>
+        <button onclick="Enviar()" class=" btn"> Enviar dados</button>
+    </div>
+    
+    <div id="mostrar" class="mostrar">  
+    </div>
+
+
+
+    <script src="js.js"></script>
+</body>
+</html>

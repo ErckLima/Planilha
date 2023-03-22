@@ -1,0 +1,63 @@
+body{
+    /* align-items: center; */
+    text-align: center;
+    margin: auto;
+    position: relative;
+    padding-top: 50px;
+    background-color: rgb(204, 233, 204);
+
+}
+form{
+    padding: 10px;
+}
+div{
+    padding: 5px;
+}
+input{
+    width: 100px;
+    height: 20px;
+    border: none;
+    border-radius: 5px;
+}
+.imagem img{
+    max-width: 100px;
+}
+.btn{
+    border: none;
+    width: 150px;
+    height: 20px;
+    border-radius: 5px;
+    background-color: rgb(95, 94, 94);
+    color: aliceblue;
+}
+.btn:hover{
+    background-color: rgb(44, 44, 44);
+}
+.ratio{
+    padding: 0%;
+}
+
+.Parcela{
+    width: 30px;
+}
+.btn_clean{
+    background-color: rgb(202, 202, 202);
+    color: black;
+}
+.btn_clean:hover{
+    color: rgb(255, 255, 255);
+}
+.mostrar{
+    position: relative;
+    margin: auto;
+    
+}
+
+
+@media (width: 350px) {
+    .mostrar{
+        width: 150px;
+        position: relative;
+        margin: auto;
+    }
+}
