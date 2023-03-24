@@ -11,7 +11,7 @@ function safe(){
 
   const Descrição = document.getElementById("Descrição").value
   const forma = document.getElementById("forma").value
-  const valor = document.getElementById("numnegativo").value
+  const valor = document.getElementById("numnegativo").value.toString().replace(".",",");
   
   const Parcela_mes = document.getElementById("Parcela_mes").value
   const Parcela_total = document.getElementById("Parcela_total").value
@@ -30,10 +30,8 @@ function safe(){
 
   console.log(dados_todos)
   }
-  
-
-
 }
+
 
 function Enviar(){
   fetch('https://sheetdb.io/api/v1/ut97qvbxxykin', {
