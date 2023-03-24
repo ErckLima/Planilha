@@ -36,7 +36,7 @@
         
         <div>
             <label for="tipo">Valor: </label>
-            <input type="number" inputmode="numeric" class="Input" step="0.01" id="numnegativo" placeholder="R$" name="data[valor]">
+            <input type="text" inputmode="numeric" class="Input" step="0.01" pattern="\d+(\,\d{2})?" id="numnegativo" placeholder="R$" name="data[valor]">
         </div>
 
         <!-- Div da parcela -->
@@ -55,6 +55,8 @@
         </div>
 
     </form>
+
+    
         <button type="submit" name="submit" class="btn" onclick="safe()"> Salvar</button>
 
     
@@ -77,6 +79,19 @@
     
     <div id="mostrar" class="mostrar">  
     </div>
+
+
+
+    <!--TESTES TESTES TESTES TESTES TESTES TESTES TESTES TESTES TESTES TESTES TESTES TESTES TESTES -->
+<!-- 
+    <input type="text" id="preco" />
+     -->
+
+    <!-- <input type="text" id="campo" /> -->
+
+    <!-- <input type="text" id="campo" />
+    <button onclick="formatar()">Format</button> -->
+    
 
 
 

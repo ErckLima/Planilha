@@ -2,6 +2,7 @@ const dados_todos = [];
 
 function safe(){
 
+  this.formatar();
   if(this.validarcampos() === 'vazio'){
     
   }
@@ -11,6 +12,7 @@ function safe(){
   const Descrição = document.getElementById("Descrição").value
   const forma = document.getElementById("forma").value
   const valor = document.getElementById("numnegativo").value
+  
   const Parcela_mes = document.getElementById("Parcela_mes").value
   const Parcela_total = document.getElementById("Parcela_total").value
   const Data = document.getElementById("Data").value
@@ -90,6 +92,7 @@ function Colsultar_Ultimo_Lancamento(){
 function teste(){
   const select = document.getElementById("opc");
   const teste = document.getElementById("numnegativo").value;
+
   
   if(teste > 0 && select.value === "deb"){
     var testenegativo = teste - teste * 2
@@ -171,3 +174,46 @@ function validarcampos(){
     return  seguir
   }
 }
+
+
+//FUNÇÃO PARA FORMATAR O INPUT DO VALOR COM OS PONTOS
+
+
+const campoInput = document.getElementById('numnegativo');
+
+function formatar(){
+    let campo = campoInput.value;
+
+    // Remove espaços em branco e substitui ponto por vírgula para permitir a formatação correta
+    campo = campo.trim().replace('.', ',');
+
+    // Verifica o comprimento do número
+    if (campo.length <= 2) {
+      // Insere zero e vírgula no início
+      campo = '0,' + campo.padStart(2, '0');
+    } else {
+      // Remove zeros à esquerda
+      campo = campo.replace(/^0+/, '');
+      
+      // Verifica se já existe uma vírgula no número
+      const posicaoVirgula = campo.indexOf(',');
+      if (posicaoVirgula === -1) {
+        // Se não existir, insere vírgula após as duas primeiras casas decimais
+        campo = campo.substring(0, campo.length - 2) + ',' + campo.substring(campo.length - 2);
+      } else if (posicaoVirgula === campo.length - 3) {
+        // Se já existir e estiver na posição correta, não faz nada
+      } else {
+        // Se já existir e estiver em outra posição, remove a vírgula existente e insere na posição correta
+        campo = campo.replace(',', '');
+        campo = campo.substring(0, campo.length - 2) + ',' + campo.substring(campo.length - 2);
+      }
+    }
+
+    // Substitui vírgula por ponto para exibir a formatação correta
+    campo = campo.replace(',', '.');
+
+    campoInput.value = campo; // atualiza o valor do campo
+};
+
+
+// TESTES TESTES TESTES TESTES TESTES TESTES TESTES TESTES TESTES TESTES TESTES TESTES TESTES
