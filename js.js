@@ -29,6 +29,7 @@ function safe(){
   })
 
   console.log(dados_todos)
+  this.Limparinputs()
   }
 }
 
@@ -131,6 +132,14 @@ function Limpar(){
 
   this.Carregadata();
   this.recarregarPagina();
+}
+
+function Limparinputs(){
+  // Limpar os inputs
+  document.getElementById("formulario").reset();
+
+  this.Carregadata();
+
 }
 
 function Carregadata(){
