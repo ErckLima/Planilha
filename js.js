@@ -7,17 +7,18 @@ function safe(){
     
   }
   else{
-    this.teste();
+    
 
   const Descrição = document.getElementById("Descrição").value
-  const forma = document.getElementById("forma").value
+  // const forma = document.getElementById("forma").value  --------------------------Descontinuado
   const valor = document.getElementById("numnegativo").value.toString().replace(".",",");
   
   const Parcela_mes = document.getElementById("Parcela_mes").value
   const Parcela_total = document.getElementById("Parcela_total").value
   const Data = document.getElementById("Data").value
 
-  const dados = {Descrição, forma, valor, Parcela_mes, Parcela_total, Data}
+
+  const dados = {Descrição, valor, Parcela_mes, Parcela_total, Data}
 
   dados_todos.push(dados)
 
@@ -88,23 +89,23 @@ function Colsultar_Ultimo_Lancamento(){
   })
 }
 
-function teste(){
-  const select = document.getElementById("opc");
-  const teste = document.getElementById("numnegativo").value;
+// function teste(){    --------------------- Descontinuado
+//   const select = document.getElementById("opc");
+//   const teste = document.getElementById("numnegativo").value;
 
   
-  if(teste > 0 && select.value === "deb"){
-    var testenegativo = teste - teste * 2
-    console.log(testenegativo)
-    document.getElementById("numnegativo").value = testenegativo;
-  }
+//   if(teste > 0 && select.value === "deb"){
+//     var testenegativo = teste - teste * 2
+//     console.log(testenegativo)
+//     document.getElementById("numnegativo").value = testenegativo;
+//   }
 
-  if(teste < 0 && select.value === "cred"){
-    var testepositivo = Math.abs(teste);
-    console.log(testepositivo)
-    document.getElementById("numnegativo").value = testepositivo;
-  }
-}
+//   if(teste < 0 && select.value === "cred"){
+//     var testepositivo = Math.abs(teste);
+//     console.log(testepositivo)
+//     document.getElementById("numnegativo").value = testepositivo;
+//   }
+// }
 
 function Ver_todos(){
   fetch('https://sheetdb.io/api/v1/ut97qvbxxykin')
@@ -158,7 +159,7 @@ function recarregarPagina() {
 
 function validarcampos(){
   const Descrição = document.getElementById("Descrição").value
-  const forma = document.getElementById("opc").value
+  // const forma = document.getElementById("opc").value  ----- Descontinuado
   const valor = document.getElementById("numnegativo").value
 
   if(Descrição === ''){
@@ -166,11 +167,11 @@ function validarcampos(){
     const campo = 'vazio';
     return campo
   }
-  else if(forma === ''){
-    alert("Selecione o tipo de operação!")
-    const campo = 'vazio';
-    return campo
-  }
+  // else if(forma === ''){      --------------------- Descontinuado
+  //   alert("Selecione o tipo de operação!")
+  //   const campo = 'vazio';
+  //   return campo
+  // }
   else if(valor === ''){
     alert("DIgite o valor!")
     const campo = 'vazio';
