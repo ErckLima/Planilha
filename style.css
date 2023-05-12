@@ -53,6 +53,9 @@ input{
     
 }
 
+.rat{
+    max-width: 30px;
+}
 
 @media (width: 350px) {
     .mostrar{
